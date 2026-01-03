@@ -2,7 +2,7 @@ namespace App;
 
 public class InterfaceConsole
 {
-    public const string uriStart = "https://seadox.ru/api/",
+    public const string uriStart = "https://seadox.ru/api/seadocs/",
         firstQuestion = """Введите ID документа по запросу https://seadox.ru/api/seadocs/{ID} (Пример: z8e ): """,
         cancel = "Отмена операции",
         startGetData = "Получение данных",

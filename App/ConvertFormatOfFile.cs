@@ -3,7 +3,7 @@ using System.Text.Json;
 
 namespace App;
 
-public class ProcessWithFile
+public class ConvertFormatOfFile
 {
     async public static Task ProcessGetDataOfFile(string uri, CancellationToken cancellationToken, HttpClient http)
     { 

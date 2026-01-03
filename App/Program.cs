@@ -5,12 +5,12 @@ HttpClient http = new HttpClient();
 CancellationTokenSource cts = new CancellationTokenSource();
 Console.CancelKeyPress += (_, _) =>
 { 
-    InterfaceConsole.WriteMessage(InterfaceConsole.cancel);
+    InterfaceConsole.WriteMessage(InterfaceConsole.Cancel);
     cts.Cancel();
 };
 
-InterfaceConsole.WriteMessage(InterfaceConsole.firstQuestion);
-string uri = $"{InterfaceConsole.uriStart}{Console.ReadLine().Trim()}";
+InterfaceConsole.WriteMessage(InterfaceConsole.FirstQuestion);
+string uri = $"{InterfaceConsole.UriStart}{Console.ReadLine().Trim()}";
 try
 {
     if (!Uri.TryCreate(uri, UriKind.Absolute, out _))
@@ -20,18 +20,18 @@ try
 }
 catch
 {
-    InterfaceConsole.WriteMessage(InterfaceConsole.errorInUri);
+    InterfaceConsole.WriteMessage(InterfaceConsole.ErrorInUri);
 }
 
 try
 {
-    InterfaceConsole.WriteMessage(InterfaceConsole.startGetData);
-    using var task = ProcessWithFile.ProcessGetDataOfFile(uri, cts.Token, http);
+    InterfaceConsole.WriteMessage(InterfaceConsole.StartGetData);
+    using var task = ConvertFormatOfFile.ProcessGetDataOfFile(uri, cts.Token, http);
     await task;
-    InterfaceConsole.WriteMessage(InterfaceConsole.finalGetData);
+    InterfaceConsole.WriteMessage(InterfaceConsole.FinalGetData);
 }
 catch
 {
-    InterfaceConsole.WriteMessage(InterfaceConsole.error);
+    InterfaceConsole.WriteMessage(InterfaceConsole.Error);
     throw;
 }

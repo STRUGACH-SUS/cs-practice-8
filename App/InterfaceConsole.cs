@@ -2,13 +2,13 @@ namespace App;
 
 public class InterfaceConsole
 {
-    public const string uriStart = "https://seadox.ru/api/seadocs/",
-        firstQuestion = """Введите ID документа по запросу https://seadox.ru/api/seadocs/{ID} (Пример: z8e ): """,
-        cancel = "Отмена операции",
-        startGetData = "Получение данных",
-        finalGetData = "Данные получены",
-        error = "Произошла оошибка",
-        errorInUri = "Данного Uri не существует";
+    public const string UriStart = "https://seadox.ru/api/seadocs/",
+        FirstQuestion = """Введите ID документа по запросу https://seadox.ru/api/seadocs/{ID} (Пример: z8e ): """,
+        Cancel = "Отмена операции",
+        StartGetData = "Получение данных",
+        FinalGetData = "Данные получены",
+        Error = "Произошла оошибка",
+        ErrorInUri = "Данного Uri не существует";
     
     public static void WriteMessage(string key)
     {

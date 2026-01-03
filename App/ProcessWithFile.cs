@@ -11,6 +11,6 @@ public class ProcessWithFile
         
         JsonDocInfo doc =  new JsonDocInfo(content);
         
-        InterfaceConsole.WriteMessages(doc.Id, doc.Name, doc.Description, doc.Created, doc.Updated, doc.Children, doc.Parent);
+        InterfaceConsole.WriteInfoOfDoc(doc.Id, doc.Name, doc.Description, doc.Created, doc.Updated, doc.Children, doc.Parent);
     }
 }

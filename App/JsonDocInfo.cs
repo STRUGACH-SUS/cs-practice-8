@@ -17,16 +17,16 @@ public class JsonDocInfo
         Id = id.GetString()!;
         
         json.TryGetProperty("name", out var name);
-        Name = name.GetString()!=null? name.GetString()! : "имя документа отсутствует";
+        Name = name.GetString()!=String.Empty? name.GetString()! : "имя документа отсутствует";
         
         json.TryGetProperty("description", out var description);
-        Description = description.GetString()!=null? description.GetString()! : "описание документа отсутствует";
+        Description = description.GetString()!=String.Empty? description.GetString()! : "описание документа отсутствует";
         
         json.TryGetProperty("createdAt", out var created);
-        Created = created.GetDateTime().ToString()!=null? created.GetDateTime().ToString("dd-MM-yyyy HH:mm:ss"): "отсутствует дата создания документа";
+        Created = created.GetDateTime().ToString()!=String.Empty? created.GetDateTime().ToString("dd-MM-yyyy HH:mm:ss"): "отсутствует дата создания документа";
         
         json.TryGetProperty("updatedAt", out var updated);
-        Updated = updated.GetDateTime().ToString()!=null? updated.GetDateTime().ToString("dd-MM-yyyy HH:mm:ss"): "отсутствует дата обновления документа или документ не обновлялся";
+        Updated = updated.GetDateTime().ToString()!=String.Empty? updated.GetDateTime().ToString("dd-MM-yyyy HH:mm:ss"): "отсутствует дата обновления документа или документ не обновлялся";
         
         json.TryGetProperty("children", out var children);
         var childrenP = "";
@@ -34,7 +34,7 @@ public class JsonDocInfo
         {
             childrenP += idOfChild.GetProperty("id").GetString()+" ";
         }
-        Children = childrenP!=null? childrenP: "отсутствуют дочерние документы";
+        Children = childrenP!=String.Empty? childrenP: "отсутствуют дочерние документы";
         
         json.TryGetProperty("parentId", out var parent);
         Parent = parent.GetString()!=null? parent.GetString()!: "отсутствуют родительские документы";

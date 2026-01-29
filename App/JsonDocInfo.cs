@@ -1,7 +1,9 @@
 using System.Text.Json;
 
 namespace App;
-
+/// <summary>
+/// Представил Json документ как класс, где поля это его сведения.
+/// </summary>
 public class JsonDocInfo
 {
     public string Id { get; }
